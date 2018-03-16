@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.launchButton = new System.Windows.Forms.Button();
             this.stayOpenCheckBox = new System.Windows.Forms.CheckBox();
             this.gameInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.gameListBox = new System.Windows.Forms.ListBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gameInfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -56,6 +58,7 @@
             this.launchButton.TabIndex = 1;
             this.launchButton.Text = "Launch!";
             this.launchButton.UseVisualStyleBackColor = true;
+            this.launchButton.Click += new System.EventHandler(this.launchButton_Click);
             // 
             // stayOpenCheckBox
             // 
@@ -70,6 +73,7 @@
             // 
             // gameInfoGroupBox
             // 
+            this.gameInfoGroupBox.Controls.Add(this.descriptionLabel);
             this.gameInfoGroupBox.Location = new System.Drawing.Point(12, 369);
             this.gameInfoGroupBox.Name = "gameInfoGroupBox";
             this.gameInfoGroupBox.Size = new System.Drawing.Size(616, 86);
@@ -83,6 +87,18 @@
             this.gameListBox.Name = "gameListBox";
             this.gameListBox.Size = new System.Drawing.Size(215, 407);
             this.gameListBox.TabIndex = 6;
+            this.gameListBox.SelectedIndexChanged += new System.EventHandler(this.gameListBox_SelectedIndexChanged);
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.descriptionLabel.Location = new System.Drawing.Point(6, 16);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(604, 67);
+            this.descriptionLabel.TabIndex = 0;
+            this.descriptionLabel.Text = resources.GetString("descriptionLabel.Text");
             // 
             // Form1
             // 
@@ -99,6 +115,7 @@
             this.Text = "ExePicker by gekkedev";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gameInfoGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,6 +128,7 @@
         private System.Windows.Forms.CheckBox stayOpenCheckBox;
         private System.Windows.Forms.ListBox gameListBox;
         private System.Windows.Forms.GroupBox gameInfoGroupBox;
+        private System.Windows.Forms.Label descriptionLabel;
     }
 }
 
