@@ -48,7 +48,7 @@ namespace ExePicker
         private void launchButton_Click(object sender, EventArgs e)
         {
             if (File.Exists(exeLocation)) {
-                Process.Start(exeLocation);
+                Process.Start(Application.StartupPath + '\\' + exeLocation);
                 if (!stayOpenCheckBox.Checked) {
                     Application.Exit();
                 }
