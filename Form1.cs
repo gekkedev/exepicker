@@ -20,6 +20,10 @@ namespace ExePicker
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists("icon.ico"))
+            {
+                Icon = new System.Drawing.Icon("icon.ico");
+            }
             using (StreamReader reader = new StreamReader("config.csv"))
             {
                 while (!reader.EndOfStream)
