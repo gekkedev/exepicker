@@ -52,7 +52,12 @@ namespace ExePicker
         private void launchButton_Click(object sender, EventArgs e)
         {
             if (File.Exists(exeLocation)) {
-                Process.Start(Application.StartupPath + '\\' + exeLocation);
+                string exeDir = new FileInfo(exeLocation).Directory.FullName;
+                var startInfo = new ProcessStartInfo();
+                startInfo.WorkingDirectory = exeDir;
+                startInfo.FileName = new FileInfo(exeLocation).FullName;
+                Process proc = Process.Start(startInfo);
+                //Process.Start(Application.StartupPath + '\\' + exeLocation);
                 if (!stayOpenCheckBox.Checked) {
                     Application.Exit();
                 }
